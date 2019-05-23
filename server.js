@@ -1,11 +1,11 @@
 var express = require('express');
-var express = require('body-parser');
-var express = require('method-override');
+var bodyParser = require('body-parser');
+var methodOverride = require('method-override');
 var exphbs = require('express-handlebars');
+var path = require('path');
 
 var app = express();
-app.use(express.statistic(__dirname + '/public'));
-
+app.use('/static', express.static(path.join(__dirname, './app/public')))
 app.use(bodyParser.urlencoded({
     extended: false
 }))
@@ -16,5 +16,10 @@ app.engine('handlebars',exphbs({
 }));
 app.set('view engine', 'handlebars');
 
+var routes = require('./controllers/routes.js');
+app.use('/', routes);
+
 var port = 3000;
 app.listen(port);
+
+

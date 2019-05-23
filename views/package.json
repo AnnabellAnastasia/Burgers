@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/AnnabellAnastasia/Burgers/issues"
   },
-  "homepage": "https://github.com/AnnabellAnastasia/Burgers#readme"
+  "homepage": "https://github.com/AnnabellAnastasia/Burgers#readme",
+  "dependencies": {
+    "express": "^4.17.0"
+  }
 }
